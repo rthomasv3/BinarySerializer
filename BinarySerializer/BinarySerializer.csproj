@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>CodeCompendium.BinarySerialization</AssemblyName>
+    <RootNamespace>CodeCompendium.BinarySerialization</RootNamespace>
+    <Authors>Robert Thomas</Authors>
+    <Company>The Whimsy and Wizardry Limited Company</Company>
+    <Description>CodeCompendium.BinarySerialization provides functionality for binary serialization and deserialization.</Description>
+    <Copyright>Copyright © The Whimsy and Wizardry Limited Company 2020</Copyright>
+    <PackageId>CodeCompendium.BinarySerialization</PackageId>
+    <Product>CodeCompendium.BinarySerialization</Product>
+    <PackageIcon>code-compendium-icon-128.png</PackageIcon>
+    <PackageIconUrl />
+    <PackageProjectUrl>https://codecompendium.dev/projects</PackageProjectUrl>
+    <PackageReleaseNotes>Initial version of CodeCompendium.BinarySerialization.</PackageReleaseNotes>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Resources\code-compendium-icon-128.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
