@@ -15,6 +15,7 @@
     <PackageProjectUrl>https://codecompendium.dev/projects</PackageProjectUrl>
     <PackageReleaseNotes>Initial version of CodeCompendium.BinarySerialization.</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/rthomasv3/BinarySerializer</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
