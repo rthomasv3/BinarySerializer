@@ -6,7 +6,7 @@
     <RootNamespace>CodeCompendium.BinarySerialization</RootNamespace>
     <Authors>Robert Thomas</Authors>
     <Company>The Whimsy and Wizardry Limited Company</Company>
-    <Description>CodeCompendium.BinarySerialization provides functionality for binary serialization and deserialization.</Description>
+    <Description>Lightweight package for version tolerant binary serialization and deserialization of objects.</Description>
     <Copyright>Copyright © The Whimsy and Wizardry Limited Company 2020</Copyright>
     <PackageId>CodeCompendium.BinarySerialization</PackageId>
     <Product>CodeCompendium.BinarySerialization</Product>
