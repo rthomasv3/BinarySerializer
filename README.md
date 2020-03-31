@@ -11,7 +11,7 @@ nuget install CodeCompendium.BinarySerialization
 ```
 
 ### Usage
-Using the package very easy and should be familiar if you've used json serialization packages.
+Using the package is very easy and should be familiar if you've used json serialization packages.
 As a general rule, I highly recommend only serializing classes meant for save files - i.e. those in the Data Access (Persistence) layer of your software.
 
 For general information see on serialization best practices see:
