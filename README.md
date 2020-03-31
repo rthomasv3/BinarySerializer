@@ -1,7 +1,7 @@
 ![Code Compendium Logo](https://codecompendium.dev/code-compendium-icon-96.png)
 
 # BinarySerializer
-Lightweight package for version tolerant binary serialization and deserialization of objects.
+Lightweight package for version tolerant binary serialization and deserialization of your classes.
 
 ## Getting Started
 These instructions will get you a copy of the package installed and provide examples on how to use it.
