@@ -13,9 +13,10 @@
     <PackageIcon>code-compendium-icon-128.png</PackageIcon>
     <PackageIconUrl />
     <PackageProjectUrl>https://codecompendium.dev/projects</PackageProjectUrl>
-    <PackageReleaseNotes>Initial version of CodeCompendium.BinarySerialization.</PackageReleaseNotes>
+    <PackageReleaseNotes>Added enum support and associated tests.</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/rthomasv3/BinarySerializer</RepositoryUrl>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

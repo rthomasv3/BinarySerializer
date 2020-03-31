@@ -129,7 +129,8 @@ namespace CodeCompendium.BinarySerializerUnitTests
             IntListProperty = new List<int>() { 1, 2, 3 },
             IntArrayProperty = new int[] { 3, 2, 1 },
             DictionaryProperty = new Dictionary<int, string>() { { 1, "One" }, { 2, "Two" } },
-            ObjectProperty = new Tuple<int, int>(1, 2)
+            ObjectProperty = new Tuple<int, int>(1, 2),
+            EnumProperty = StringComparison.Ordinal
          };
          byte[] bytes = serializer.GetObjectBytes(testClass, Endianness.LittleEndian, false);
 
@@ -147,6 +148,7 @@ namespace CodeCompendium.BinarySerializerUnitTests
          CollectionAssert.AreEqual(testClass.DictionaryProperty, result.DictionaryProperty);
          Assert.AreEqual(testClass.ObjectProperty.Item1, result.ObjectProperty.Item1);
          Assert.AreEqual(testClass.ObjectProperty.Item2, result.ObjectProperty.Item2);
+         Assert.AreEqual(testClass.EnumProperty, result.EnumProperty);
       }
 
       [TestMethod]
@@ -238,6 +240,7 @@ namespace CodeCompendium.BinarySerializerUnitTests
       public int[] IntArrayProperty { get; set; }
       public Dictionary<int, string> DictionaryProperty { get; set; }
       public Tuple<int, int> ObjectProperty { get; set; }
+      public StringComparison EnumProperty { get; set; }
    }
 
    public class TestSetterRemovedClass
@@ -258,6 +261,7 @@ namespace CodeCompendium.BinarySerializerUnitTests
       public int[] IntArrayProperty { get; set; }
       public Dictionary<int, string> DictionaryProperty { get; set; }
       public Tuple<int, int> ObjectProperty { get; set; }
+      public StringComparison EnumProperty { get; set; }
    }
 
    public class TestSetterCaseSensitiveClass

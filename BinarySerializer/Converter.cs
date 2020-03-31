@@ -110,6 +110,10 @@ namespace CodeCompendium.BinarySerialization
          {
             bytes = GetBytes(dateTime.Ticks, endianness);
          }
+         else if (value is Enum enumValue)
+         {
+            bytes = BitConverter.GetBytes((int)(object)enumValue);
+         }
          else
          {
             throw new NotSupportedException(String.Format(_typeNotSupported, typeof(T).Name));
@@ -219,6 +223,10 @@ namespace CodeCompendium.BinarySerialization
             {
                value = new DateTime(BitConverter.ToInt64(bytes, 0));
             }
+            else if (type?.BaseType == typeof(Enum))
+            {
+               value = Enum.ToObject(type, BitConverter.ToInt32(bytes, 0));
+            }
             else
             {
                throw new NotSupportedException(String.Format(_typeNotSupported, type.Name));
@@ -258,7 +266,8 @@ namespace CodeCompendium.BinarySerialization
                  type == typeof(decimal) ||
                  type == typeof(string) ||
                  type == typeof(Guid) ||
-                 type == typeof(DateTime));
+                 type == typeof(DateTime)) ||
+                 type?.BaseType == typeof(Enum);
       }
 
       /// <summary>
@@ -339,6 +348,14 @@ namespace CodeCompendium.BinarySerialization
          else if (type == typeof(DateTime))
          {
             size = sizeof(long);
+         }
+         else if (type == typeof(DateTime))
+         {
+            size = sizeof(long);
+         }
+         else if (type?.BaseType == typeof(Enum))
+         {
+            size = sizeof(int);
          }
 
          return size;

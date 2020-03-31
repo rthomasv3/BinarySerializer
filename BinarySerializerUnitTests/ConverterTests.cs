@@ -163,6 +163,16 @@ namespace CodeCompendium.BinarySerializerUnitTests
       }
 
       [TestMethod]
+      public void GetBytes_EnumProvided_BytesReturned()
+      {
+         TestConverter converter = new TestConverter();
+
+         byte[] bytes = converter.TestGetBytes(StringComparison.Ordinal, Endianness.LittleEndian);
+
+         Assert.AreEqual(sizeof(int), bytes.Length);
+      }
+
+      [TestMethod]
       [ExpectedException(typeof(NotSupportedException))]
       public void GetBytes_InvalidTypeProvided_ThrowsNotSupportedException()
       {
@@ -361,6 +371,18 @@ namespace CodeCompendium.BinarySerializerUnitTests
       }
 
       [TestMethod]
+      public void GetValue_EnumBytesProvided_EnumReturned()
+      {
+         StringComparison value = StringComparison.Ordinal;
+         TestConverter converter = new TestConverter();
+         byte[] bytes = converter.TestGetBytes(value, Endianness.LittleEndian);
+
+         StringComparison result = converter.TestGetValue<StringComparison>(bytes, Endianness.LittleEndian);
+
+         Assert.AreEqual(value, result);
+      }
+
+      [TestMethod]
       [ExpectedException(typeof(NotSupportedException))]
       public void GetValue_InvalidType_ThrowsNotSupportedException()
       {
@@ -435,6 +457,16 @@ namespace CodeCompendium.BinarySerializerUnitTests
          TestConverter converter = new TestConverter();
 
          bool result = converter.TestIsValueType(typeof(DateTime));
+
+         Assert.IsTrue(result);
+      }
+
+      [TestMethod]
+      public void IsValueType_EnumTypeProvided_TrueReturned()
+      {
+         TestConverter converter = new TestConverter();
+
+         bool result = converter.TestIsValueType(typeof(StringComparison));
 
          Assert.IsTrue(result);
       }
@@ -627,6 +659,16 @@ namespace CodeCompendium.BinarySerializerUnitTests
          int result = converter.TestTypeSize(typeof(DateTime));
 
          Assert.AreEqual(sizeof(long), result);
+      }
+
+      [TestMethod]
+      public void TypeSize_EnumTypeProvided_SizeReturned()
+      {
+         TestConverter converter = new TestConverter();
+
+         int result = converter.TestTypeSize(typeof(StringComparison));
+
+         Assert.AreEqual(sizeof(int), result);
       }
 
       [TestMethod]
