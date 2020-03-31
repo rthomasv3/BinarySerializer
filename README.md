@@ -1,3 +1,5 @@
+![Code Compendium Logo](https://codecompendium.dev/code-compendium-icon-96.png)
+
 # BinarySerializer
 Lightweight package for version tolerant binary serialization and deserialization of objects.
 
