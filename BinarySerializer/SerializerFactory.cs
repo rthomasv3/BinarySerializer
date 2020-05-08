@@ -63,7 +63,7 @@ namespace CodeCompendium.BinarySerialization
 
             if (endianness != _systemEndianness)
             {
-               version = BitConverter.ToUInt16(bytes.Skip(1).Reverse().Take(2).ToArray(), 0);
+               version = BitConverter.ToUInt16(bytes.Skip(1).Take(2).Reverse().ToArray(), 0);
             }
             else
             {
